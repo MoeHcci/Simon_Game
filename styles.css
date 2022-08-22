@@ -1,0 +1,66 @@
+body {
+  background-color: #3B5998
+}
+
+#title {
+font-family: 'VT323', monospace;
+font-family: 'VT323', sans-serif;
+font-size: 5rem;
+text-align: center;
+}
+#p1 {
+font-family: 'VT323', monospace;
+font-family: 'VT323', sans-serif;
+font-size: 2rem;
+text-align: center;
+}
+
+#mainButton {
+font-family: 'Montserrat', sans-serif;
+font-family: 'VT323', sans-serif;
+font-size: 2rem;
+display: block;
+margin-right: auto;
+margin-left: auto;
+background-color: #DFE3EE;
+margin-bottom:2rem;
+
+}
+
+#mainButton:hover {
+  background-color: #3B5998;
+}
+
+#mainButton:active {
+  background-color: #3B5998;
+  transform: translateY(1rem);
+}
+
+.game_buttons {
+  font-size: 10rem;
+
+}
+
+.buttonOne {
+  background-color: green;
+
+
+}
+
+.buttonTwo {
+  background-color: red;
+
+}
+
+.buttonThree {
+  background-color: yellow;
+
+}
+
+
+
+.buttonFour {
+  background-color: blue;
+
+
+}
