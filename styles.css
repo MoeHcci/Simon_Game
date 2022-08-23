@@ -39,7 +39,13 @@ body {
 .game_buttons {
   font-size: 8rem;
   width: 25%;
+  margin: 0.2rem 0.2rem 0.2rem 0.2rem;
+  border: 0.5rem solid black
 
+}
+
+.game_buttons:active {
+  transform: translateY(0.1rem);
 }
 
 .buttonOne {
