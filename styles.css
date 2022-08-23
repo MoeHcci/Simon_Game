@@ -3,28 +3,28 @@ body {
 }
 
 #title {
-font-family: 'VT323', monospace;
-font-family: 'VT323', sans-serif;
-font-size: 5rem;
-text-align: center;
+  font-family: 'VT323', monospace;
+  font-family: 'VT323', sans-serif;
+  font-size: 5rem;
+  text-align: center;
 }
+
 #p1 {
-font-family: 'VT323', monospace;
-font-family: 'VT323', sans-serif;
-font-size: 2rem;
-text-align: center;
+  font-family: 'VT323', monospace;
+  font-family: 'VT323', sans-serif;
+  font-size: 2rem;
+  text-align: center;
 }
 
 #mainButton {
-font-family: 'Montserrat', sans-serif;
-font-family: 'VT323', sans-serif;
-font-size: 2rem;
-display: block;
-margin-right: auto;
-margin-left: auto;
-background-color: #DFE3EE;
-margin-bottom:2rem;
-
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'VT323', sans-serif;
+  font-size: 2rem;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #DFE3EE;
+  margin-bottom: 2rem;
 }
 
 #mainButton:hover {
@@ -37,30 +37,33 @@ margin-bottom:2rem;
 }
 
 .game_buttons {
-  font-size: 10rem;
+  font-size: 8rem;
+  width: 25%;
 
 }
 
 .buttonOne {
   background-color: green;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-
+.game_buttons_bottom {
+  text-align: center;
 }
 
 .buttonTwo {
   background-color: red;
-
+  display: inline-block;
 }
 
 .buttonThree {
   background-color: yellow;
-
+  display: inline-block;
 }
-
-
 
 .buttonFour {
   background-color: blue;
-
-
+  display: inline-block;
 }
