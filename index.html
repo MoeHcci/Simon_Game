@@ -24,13 +24,15 @@
 <p id="p1" >This game is similar to the Simon Game but you can also control the pattern using the keyboard arrow keys</p>
 <button id="mainButton" type="button" name="button">Start/Re-start The Game</button>
 
+<div class="UI_View">
 
-  <button class="game_buttons buttonOne" type="button" name="button">&#x2191;</button>
+
+  <button id="green" class="game_buttons buttonOne" type="button" name="button">&#x2191;</button>
 
 <div class="game_buttons_bottom">
-  <button class="game_buttons buttonTwo" type="button" name="button">&#x2190;</button>
-  <button class="game_buttons buttonThree" type="button" name="button">&#x2193;</button>
-  <button class="game_buttons buttonFour" type="button" name="button">&#x2192;</button>
+  <button id="red" class="game_buttons buttonTwo" type="button" name="button">&#x2190;</button>
+  <button id="yellow" class="game_buttons buttonThree" type="button" name="button">&#x2193;</button>
+  <button id="blue" class="game_buttons buttonFour" type="button" name="button">&#x2192;</button>
 </div>
 
 
@@ -38,5 +40,10 @@
 
     <!-- Link index.js is at the end. if outside the body tags ensure to include a .ready() method-->
     <script src="index.js" charset="utf-8"> </script>
+
+</div>
+    <footer>
+      <p class="footer">© Copyright 2022 Modifed Simon Game </p>
+    </footer>
   </body>
 </html>
