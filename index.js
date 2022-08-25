@@ -15,6 +15,7 @@ var pattern = [randomColor][0];
 
 var idPattern = ('#' + pattern);
 
+// introduce an empty list
 var clickedPattern = [];
 
 
@@ -30,21 +31,10 @@ $(document).ready(function() {
     audio.play();
   });
 
-
+// The ID of the pushed button is added to the empty list each time putting is pressed
   $(".game_buttons").click(function() {
-     selectedColorByUser = this.id;
-
-  })
-;
-
-
-
-
-
-
-
-
-
-
+    selectedColorByUser = this.id
+    clickedPattern.push(this.id)
+  });
 
 });
