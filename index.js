@@ -54,12 +54,9 @@ function buttonClicked(x) {
 // Start of $(document).ready(function()
 $(document).ready(function() {
 
-  // A button is animated once the page is loaded based on whatever idPattern value is
+  // A button is animated once the page is loaded based on whatever idPattern value is, which is controlled randomly
   $(idPattern).fadeOut(100).fadeIn(100);
-  // A Sound is made for whatever idPattern the value is
-  $(idPattern).click(soundClicked);
 
-  // A Sound is made for whatever a key is pressed
 
   // The ID of the pushed button is added to the empty list each time putting is pressed
   $(".game_buttons").click(function() {
@@ -70,7 +67,7 @@ $(document).ready(function() {
   // Play the keyClicked function
   $(document).keydown(keyClicked);
 
-  // Play the keyClicked function
+  // Play the buttonClicked function
   $(document).click(buttonClicked);
 
   // End of $(document).ready(function()
