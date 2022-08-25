@@ -86,6 +86,7 @@ body {
 .buttonFour {
   background-color: blue;
   display: inline-block;
+
 }
 
 
@@ -96,6 +97,13 @@ body {
   text-align: center;
   margin: 0;
   height: 1.875rem;
+
+}
+
+/* This is a class is added and removed when each button is clicked */
+.JSclass{
+opacity:0.2;
+
 
 }
 
