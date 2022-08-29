@@ -9,12 +9,11 @@ var colors = ["green", "red", "yellow", "blue"];
 
 // SECTION 2 (randomness)
 // // Numbers generation (random)
-var randomNumber = Math.floor(Math.random() * (4 - 0));
-// Secting a color based on the generated number
-var randomColor = colors[randomNumber];
-// adding # because we was to manipulate an ID
-var idPattern = ('#' + randomColor);
-
+// var randomNumber = Math.floor(Math.random() * (4 - 0));
+// // Secting a color based on the generated number
+// var randomColor = colors[randomNumber];
+// // adding # because we was to manipulate an ID
+// var idPattern = ('#' + randomColor);
 
 
 // SECTION 3 (lists)
@@ -22,6 +21,8 @@ var idPattern = ('#' + randomColor);
 var clickedPattern = [];
 // introduce an empty list, which will keep track of the levels buttons
 var clickedPatternLevels = [];
+// introduce an empty list, which will keep track of the patterns suggested buttons
+var randomPatterns = [];
 
 
 // SECTION 4 (Sounds Playing )
@@ -57,23 +58,44 @@ $(document).click(buttonClicked);
 
 
 
+// Need to figure out how a second button can be iniated after level becomes 1 and a third on and so on.
+// function takes level as an imput
+// generates a random number
+// and produceds a random # button click
+
+
+var wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
+// https://thewebdev.info/2022/02/09/how-to-create-pause-or-delay-in-a-javascript-for-loop/#:~:text=JavaScript%20for%20loop%3F-,To%20create%20pause%20or%20delay%20in%20a%20JavaScript%20for%20loop,with%20a%20for%2Dof%20loop.&text=to%20define%20the%20wait%20function,the%20promise%20in%20ms%20milliseconds.
+
 // SECTION 5 (Game Logic)
 // Starting the game
-  // Any click on the screen starts the game (Game logic)
-  $(document).click(function() {
-    $("#title_1").text("LVL " + level)
-    // Fill the clickedPatternLevels list
-    clickedPatternLevels.push(level)
-    // Once the above condition is satisfied (page has been clicked). The below is activated
-    $(idPattern).fadeOut(100).fadeIn(100)
-    // Going into the next level
-    level = level + 1
-  });
+async function gameStartLvlIncrease() {
+  while (level => 0) {
+    $("#title_1").text("LVL " + level);
+    clickedPatternLevels.push(level);
+
+    var idPattern = ('#' + (colors[(Math.floor(Math.random() * (4 - 0)))]));
+    for (i = 0; i < randomPatterns.length; i = i + 1) {
+      $((randomPatterns)[i]).fadeOut(100).fadeIn(100);
+      await wait(1000);
+    };
+
+    if (clickedPatternLevels.length === (clickedPattern.length)) {
+      console.log('hi');
+      randomPatterns.push(idPattern);
+      level = level + 1;
+      break;
+    };
 
 
 
-  // The ID of the pushed button is added to the empty list each time putting is pressed
-  $(".game_buttons").click(function() {
-    selectedColorByUser = this.id
-    clickedPattern.push(this.id)
-  });
+
+  }
+}
+
+$(document).click(gameStartLvlIncrease);
+$(".game_buttons").click(function() {
+  selectedColorByUser = this.id
+  clickedPattern.push(this.id)
+});
