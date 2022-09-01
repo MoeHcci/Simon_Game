@@ -1,7 +1,7 @@
 // SECTION 1 (var introduction)
 // Var introduction
 // The level var for keeping track of the game's levels
-var level = 0;
+// var level = 0;
 // This var is to keep track the button user clicks on
 var selectedColorByUser;
 // The colors var contains all the colors we are working with
@@ -24,6 +24,7 @@ var clickedPatternLevels = [];
 // introduce an empty list, which will keep track of the patterns suggested buttons
 var randomPatterns = [];
 
+var random_1Pattern = [];
 
 // SECTION 4 (Sounds Playing )
 // Function that plays sounds baseds on the key clicked
@@ -71,30 +72,60 @@ var wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 // SECTION 5 (Game Logic)
 // Starting the game
 async function gameStartLvlIncrease() {
-  while (level => 0) {
-    $("#title_1").text("LVL " + level);
-    clickedPatternLevels.push(level);
-
-    var idPattern = ('#' + (colors[(Math.floor(Math.random() * (4 - 0)))]));
-    for (i = 0; i < randomPatterns.length; i = i + 1) {
-      $((randomPatterns)[i]).fadeOut(100).fadeIn(100);
-      await wait(1000);
-    };
-
-    if (clickedPatternLevels.length === (clickedPattern.length)) {
-      console.log('hi');
-      randomPatterns.push(idPattern);
-      level = level + 1;
-      break;
-    };
+  level = 0;
+  $("#title_1").text("LVL " + level);
+  clickedPatternLevels.push(level);
+  random_0 = ('#' + ["green", "red", "yellow", "blue"][Math.floor(Math.random() * (4 - 0))]);
+  $(random_0).fadeOut(100).fadeIn(100);
 
 
+while (level < 10) {
 
 
-  }
-}
+  console.log('The level is ' + level);
+  random_1 = ('#' + ["green", "red", "yellow", "blue"][Math.floor(Math.random() * (4 - 0))]);
+  console.log(random_1);
+  random_1Pattern.push(random_1)
+  console.log(random_1Pattern);
+
+
+  level = level + 1
+  console.log ("The following level has been added, level: " + level)
+  clickedPatternLevels.push(level);
+  await wait(1000);
+  $("#title_1").text("LVL " + level);
+
+
+
+};
+
+
+  // while (level => 0) {
+  //
+    // random_1 = ('#' + ["green", "red", "yellow", "blue"][Math.floor(Math.random() * (4 - 0))]);
+    // random_1Pattern.push(random_1)
+  //
+    // for (i = 0; i < clickedPatternLevels.length; i = i + 1) {
+    //
+    //   $(random_1Pattern[i]).fadeOut(100).fadeIn(100);
+    //   await wait(100);
+    //
+    // };
+  //
+  //   if (clickedPatternLevels.length === clickedPattern.length) {
+  //     $("#title_1").text("LVL " + level);
+  //     clickedPatternLevels.push(level);
+  //     level = 1 + level;
+  //   } else {
+  //     break;
+  //   };
+  //
+  //
+  // };
+};
 
 $(document).click(gameStartLvlIncrease);
+
 $(".game_buttons").click(function() {
   selectedColorByUser = this.id
   clickedPattern.push(this.id)
