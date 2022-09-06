@@ -7,3 +7,6 @@
 <li>Bootstrap, most notably the the grid system</li>
 <li>Vanilla JS & jQuery, most notably the for/while loops, switch, if statements, anonymous functions, constructor functions </li>
 </ul>
+
+
+<p> Update Sept 6, 2022: Currently taking a break from developing this web application and will get back to it later on </p> 
