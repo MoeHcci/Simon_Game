@@ -65,63 +65,40 @@ $(document).click(buttonClicked);
 // and produceds a random # button click
 
 
-var wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
-// https://thewebdev.info/2022/02/09/how-to-create-pause-or-delay-in-a-javascript-for-loop/#:~:text=JavaScript%20for%20loop%3F-,To%20create%20pause%20or%20delay%20in%20a%20JavaScript%20for%20loop,with%20a%20for%2Dof%20loop.&text=to%20define%20the%20wait%20function,the%20promise%20in%20ms%20milliseconds.
 
 // SECTION 5 (Game Logic)
 // Starting the game
-async function gameStartLvlIncrease() {
+function gameStartLvlIncrease() {
   level = 0;
   $("#title_1").text("LVL " + level);
   clickedPatternLevels.push(level);
-  random_0 = ('#' + ["green", "red", "yellow", "blue"][Math.floor(Math.random() * (4 - 0))]);
-  $(random_0).fadeOut(100).fadeIn(100);
+
+  // while the level is 0 or above
+  while (level < 3) {
 
 
-while (level < 10) {
+    // console.log('The level is ' + level);
+    random_1 = ('#' + ["green", "red", "yellow", "blue"][Math.floor(Math.random() * (4 - 0))]);
+    // console.log(random_1);
+    random_1Pattern.push(random_1)
+    // console.log(random_1Pattern);
+
+    for (i = 0; i < clickedPatternLevels.length; i = i + 1) {
+      $(random_1Pattern[i]).fadeOut(100).fadeIn(100);
+      // console.log(random_1Pattern[i] + " Has been faded");
+    };
 
 
-  console.log('The level is ' + level);
-  random_1 = ('#' + ["green", "red", "yellow", "blue"][Math.floor(Math.random() * (4 - 0))]);
-  console.log(random_1);
-  random_1Pattern.push(random_1)
-  console.log(random_1Pattern);
+// if statement. if true move to the next step if nit exit.
+
+    level = level + 1;
+    // console.log("The following level has been added, level: " + level);
+    clickedPatternLevels.push(level);
+    $("#title_1").text("LVL " + level);
+
+  };
 
 
-  level = level + 1
-  console.log ("The following level has been added, level: " + level)
-  clickedPatternLevels.push(level);
-  await wait(1000);
-  $("#title_1").text("LVL " + level);
-
-
-
-};
-
-
-  // while (level => 0) {
-  //
-    // random_1 = ('#' + ["green", "red", "yellow", "blue"][Math.floor(Math.random() * (4 - 0))]);
-    // random_1Pattern.push(random_1)
-  //
-    // for (i = 0; i < clickedPatternLevels.length; i = i + 1) {
-    //
-    //   $(random_1Pattern[i]).fadeOut(100).fadeIn(100);
-    //   await wait(100);
-    //
-    // };
-  //
-  //   if (clickedPatternLevels.length === clickedPattern.length) {
-  //     $("#title_1").text("LVL " + level);
-  //     clickedPatternLevels.push(level);
-  //     level = 1 + level;
-  //   } else {
-  //     break;
-  //   };
-  //
-  //
-  // };
 };
 
 $(document).click(gameStartLvlIncrease);
