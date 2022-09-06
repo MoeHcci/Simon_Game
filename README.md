@@ -9,4 +9,5 @@
 </ul>
 
 
-<p> Update Sept 6, 2022: Currently taking a break from developing this web application and will get back to it later on </p> 
+<p> Update Sept 6, 2022: Currently taking a break from developing this web application and will get back to it later on. The game's UI is presented below. </p>
+<img src="gameUI.png" alt="the game's UI">  
